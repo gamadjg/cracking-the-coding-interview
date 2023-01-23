@@ -7,8 +7,8 @@ def checkPermutations(baseStr, checkStr):
         return False
 
     # trim and strip any whitespace
-    baseStr = baseStr.strip().replace(" ", "")
-    checkStr = checkStr.strip().replace(" ", "")
+    baseStr = baseStr.replace(" ", "")
+    checkStr = checkStr.replace(" ", "")
 
     # if lengths of both strings are not the same, strings will cannot be permutations of each other
     if len(baseStr) != len(checkStr):
@@ -38,7 +38,7 @@ def checkPermutations(baseStr, checkStr):
 
 def test_checkPermutations():
     # check whitespace removal before permutation comparison
-    assert checkPermutations("abbac ", "abbac ") == True
+    assert checkPermutations("abb ac ", "a bbac ") == True
     # check string length differences
     assert checkPermutations("abc", " ") == False
     assert checkPermutations("", "abc") == False
